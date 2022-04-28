@@ -1,8 +1,6 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
-import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +8,7 @@ import java.util.Map;
 import java.util.Optional;
 
 // @Repository 어노테이션은 interface가 아닌 구현체에 작성해주어야 함.
-@Repository
+//@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>(); // save() 위해 사용. 실무에서는 공유되는 문제 때문에 단순 HashMap 안씀

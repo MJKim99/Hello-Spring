@@ -12,8 +12,9 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="member : ${members}">
-                <td th:text="${member.id}"></td>
+            <tr th:each="member : ${members}"> <!-- ${} 표시를 사용해 Model에 담긴 값을 가져옴
+            th:each 는 반복문 표현식 -->
+                <td th:text="${member.id}">ㅎㅎ</td>
                 <td th:text="${member.name}"></td>
             </tr>
             </tbody>
