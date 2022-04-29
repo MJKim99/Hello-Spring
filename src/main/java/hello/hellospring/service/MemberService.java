@@ -16,7 +16,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     // 이런 걸 DI라고 함. 내가 직접 new 하는 게 아닌, 외부에서 넣어주는 것
-    @Autowired // MemberService도 MemberRepository가 필요하기 때문에 해당 어노테이션 사용해서 주입해줌
+//    @Autowired // MemberService도 MemberRepository가 필요하기 때문에 해당 어노테이션 사용해서 주입해줌
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
