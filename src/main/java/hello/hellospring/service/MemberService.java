@@ -3,12 +3,14 @@ package hello.hellospring.service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 //@Service
 // 서비스에선 보통 비즈니스 로직에서 가져온 이름을 사용한다.
+@Transactional // jpa 사용 시 항상 Transactional이 있어야 한다. (데이터를 변경하고 저장할 때에 항상 @Transactional이 있어야 함)
 public class MemberService {
 
     // Test 작성을 위해 코드 수정
