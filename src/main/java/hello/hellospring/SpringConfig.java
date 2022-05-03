@@ -1,5 +1,6 @@
 package hello.hellospring;
 
+import hello.hellospring.aop.TimeTraceAop;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.JdbcMemberRepository;
 import hello.hellospring.repository.JdbcTemplateMemberRepository;
@@ -80,6 +81,13 @@ public class SpringConfig {
 //        return new JdbcTemplateMemberRepository(dataSource);
 //        return new JpaMemberRepository(em);
 
+//    }
+
+//    @Bean // 여기서 등록하면 특별한 거 같아서 여기서 등록.
+//    // Service 같은 건 정형화된 것이기 때문에 그냥 컴포넌트 스캔 방식 사용하지만
+//    // AOP 같은 경우는 정형화 되기보다는 AOP구나 라고 인지할 수 있어야 하기 때문
+//    public TimeTraceAop timeTraceAop() {
+//        return new TimeTraceAop();
 //    }
 
 

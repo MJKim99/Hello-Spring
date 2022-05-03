@@ -27,15 +27,25 @@ public class MemberService {
      * 회원 가입
      */
     public Long join(Member member) {
-        // 같은 이름이 있는 중복 회원 X
+//        // AOP
+//        long start = System.currentTimeMillis();
+//
+//        try {
+
+            // 같은 이름이 있는 중복 회원 X
 //        Optional<Member> result = memberRepository.findByName(member.getName()); // 자료형이 Optional로 바로 반환되는 건 좋지 않음. 그래서 아래처럼 작성
 //        result.ifPresent(m -> { // ifPresent : 값이 있으면(null이 아니면) 로직 동작
 //            // 기존 코드였다면 if(null)로 체크했겠지만 Optional로 감쌌기 때문에 사용 가능
 //            throw new IllegalStateException("이미 존재하는 회원입니다.");
 //        });
-        validateDuplicateMember(member); // 중복 회원 검증
-        memberRepository.save(member);
-        return member.getId();
+            validateDuplicateMember(member); // 중복 회원 검증
+            memberRepository.save(member);
+            return member.getId();
+//        } finally {
+//            long finish = System.currentTimeMillis();
+//            long timeMs = finish - start;
+//            System.out.println("join = " + timeMs + "ms");
+//        } aop.TimeTraceAop에서
     }
 
     private void validateDuplicateMember(Member member) {

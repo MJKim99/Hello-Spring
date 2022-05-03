@@ -26,6 +26,7 @@ public class MemberController {
     @Autowired
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        System.out.println("memberService = " + memberService.getClass());
     }
     // 스프링 컨테이너가 뜰 때 MemberController를 생성하는데 그때 생성자를 호출한다.
     // 생성자에 @Autowired 어노테이션이 붙어있으면
